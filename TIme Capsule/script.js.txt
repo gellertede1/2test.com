@@ -1,0 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const messageForm = document.getElementById("message-form");
+    const displaySection = document.getElementById("message-display");
+    const displayMessage = document.getElementById("display-message");
+
+    messageForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const message = document.getElementById("message").value;
+        const timerMinutes = parseInt(document.getElementById("timer").value, 10);
+        
+        if (isNaN(timerMinutes) || timerMinutes <= 0) {
+            alert("Please enter a valid timer value.");
+            return;
+        }
+
+        // Hide the form and show the display section
+        messageForm.style.display = "none";
+        displaySection.style.display = "block";
+
+        // Set the timer to show the message
+        setTimeout(function () {
+            displayMessage.textContent = message;
+        }, timerMinutes * 60 * 1000); // Convert minutes to milliseconds
+    });
+});
