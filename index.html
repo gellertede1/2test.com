@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Time Capsule</title>
+</head>
+<body>
+    <div class="container">
+        <form id="message-form">
+            <h1>The Time Capsule</h1>
+            <label for="message">Write a message for your future self:</label>
+            <textarea id="message" rows="4" required></textarea>
+            <label for="future-date">Select a future date:</label>
+            <input type="datetime-local" id="future-date" required>
+            <button id="submit-button" type="button">Create Time Capsule</button>
+        </form>
+        <div id="message-display" class="hidden">
+            <h2>Your Message from the Past:</h2>
+            <p id="display-message"></p>
+            <div id="timer-container">
+                <h3>Time Remaining:</h3>
+                <p id="timer-display"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
